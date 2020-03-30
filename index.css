@@ -1,0 +1,380 @@
+body {
+    display: flex;
+    color: #fff;
+}
+
+.container-esquerda {
+    height: 100%;
+    width: 27.5%;
+    background-color: #DB7093;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nome-jogador-wrapper {
+    width: 70%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nome-jogador {
+    width: 100%;
+    height: 30%;
+    border: none;
+    border-radius: 7px;
+    box-sizing: border-box;
+    outline: none;
+    padding-left: 10px;
+}
+
+.nome-jogador::placeholder {
+    color: #DB7093;
+}
+
+.jogador2-wrapper {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    background-color: #fff;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2px;
+}
+
+.nome-jogador2 {
+    height: 100%;
+}
+
+.checkbox-bot {
+    width: 80px;
+    height: 80%;
+    background-color: #DB7093;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.checkbox-bot__bolinha {
+    width: 19px;
+    height: 19px;
+    background-color: #fff;
+    border-radius: 20px;
+    transition-duration: 250ms;
+}
+
+.checkbok-bot-bolinha-clicked {
+    transform: translatex(43px);
+}
+
+.tipo-partida-wrapper {
+    width: 70%;
+    height: 13%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.md3-md5-wrapper {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-tipo-partida {
+    height: 23px;
+    width: 80px;
+    background-color: #DB7093;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    cursor: pointer;
+}
+
+.checkbox-tipo-partida__bolinha {
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border-radius: 12px;
+    transition-duration: 250ms;
+}
+
+.checkbox-bot-md-bolinha-clicked{ 
+    transform: translateX(62px)
+}
+
+.button-jogar {
+    width: 100%;
+    height: 30%;
+    color: #fff;
+    background-color: #90EE90;
+    border: none;
+    font-size: 1em;
+    border-radius: 9px;
+    outline: none;
+}
+
+.titulo-md {
+    font-weight: 400;
+    color: #FFF;
+}
+
+.subtitulo-md {
+    font-weight: 400;
+    color: #fff;
+}
+
+.historico-partidas-wrapper {
+    height: 40%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.historico-partidas {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    animation-name: historico-partidas-entrando;
+    animation-duration: 250ms;
+    animation-timing-function: cubic-bezier(.25,.1,.69,1.46);
+    animation-fill-mode: backwards;
+    transition-duration: 250ms;
+}
+
+@keyframes historico-partidas-entrando {
+    from { 
+        transform: translateX(-100%);
+        height: 0;
+    }
+    to {
+        transform: translateX(0);
+        height: 60px;
+        min-height: 60px;
+    }
+}
+
+.vecedor-partidas-wrapper {
+    height: 100%;
+    width: 35%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.box-mini-campo {
+    height: 100%;
+    width: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mini-campo {
+    height: 18px;
+    width: 18px;
+    margin: 1px;
+    background-color: #fff;
+    border-radius: 3px;
+    color: darkgrey;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-historico-partidas {
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+}
+
+.vencedor-partidas {
+    color: #90EE90;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.nome-vencedor-partidas {
+    color: darkgrey;
+    font-weight: 400;
+    font-size: .8em;
+}
+
+.cenario-partida {
+    font-weight: 400;
+    margin: 15px;
+}
+
+.button-reiniciar {
+    width: 70%;
+    height: 5%;
+    color: #DB7093;
+    background-color: fff;
+    border: none;
+    font-size: 1em;
+    border-radius: 9px;
+    outline: none
+    
+    ;
+}
+
+.container-centro {
+    height: 100%;
+    width: 45%;
+    background-color: #DB7093;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.placar-wrapper {
+    height: 10%;
+    width: 70%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 12px;
+    margin-top: 18px;
+}
+
+.pontos-jogador {
+    color: #DB7093;
+    height: 100%;
+    width: 15%;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.placar-vencedor {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+}
+
+.titulo-placar {
+    color: #DB7093;
+    font-weight: 600;
+}
+
+.jogador-vencedor-placar {
+    color: #DB7093;
+}
+
+.box-campo {
+    width: 670px;
+    height: 670px;
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.campo {
+    width: 211px;
+    height: 211px;
+    background-color: #fff;
+    margin: 5.5px;
+    border-radius: 12px;
+    color: darkgray;
+    font-size: 12em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-direita {
+    height: 100%;
+    width: 27.5%;
+    background-color: #DB7093;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titulo-historico-jogadas {
+    font-weight: 400;
+    margin-top: 150px;
+}
+
+.historico-jogadas-wrapper {
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.campo-historico-jogadas {
+    height: 11%;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    animation-name: historico-jogadas-entrando;
+    animation-duration: 250ms;
+    animation-fill-mode: backwards;
+    transition-duration: 250ms;
+}
+
+@keyframes historico-jogadas-entrando {
+    from {
+        transform: translatex(100%);
+        height: 0;
+    }
+    to{
+        transform: translatex(0);
+        height: 11%;
+    }
+}
+
+.jogada-historico-jogadas {
+    color: darkgray;
+    font-size: 4.5em;
+}
+
+.nome-campo-jogada {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.jogador-historico-jogadas {
+    color: darkgrey;
+}
+
+.campo-jogada {
+    color: #DB7093
+}

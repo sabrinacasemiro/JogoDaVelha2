@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <div class='container-esquerda'>
+        <div class="nome-jogador-wrapper">
+            <input placeholder="Jogador 1" class="nome-jogador1 nome-jogador"> 
+            <div class="jogador2-wrapper">
+                <input placeholder="Jogador 2" class="nome-jogador2 nome-jogador">
+                <div class="checkbox-bot">
+                    <div class="checkbox-bot__bolinha"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tipo-partida-wrapper">
+            <h1 class="titulo-md">Tipo de Partida</h1>
+            <div class="md3-md5-wrapper">
+                <h2 class="subtitulo-md">Melhor de 3</h2>
+                <div class="checkbox-tipo-partida">
+                    <div class="checkbox-tipo-partida__bolinha"></div>
+                </div>
+                <h2 class="subtitulo-md">Melhor de 5</h2>
+            </div>
+            <button class="button-jogar">Jogar</button>
+        </div>
+        <h1 class="titulo-historico-partidas">Historio de Partidas</h1>
+        <div class="historico-partidas-wrapper">
+        </div>
+        <button class="button-reiniciar">Reiniciar</button>
+    </div>
+    <div class='container-centro'>
+        <div class="placar-wrapper">
+            <span class="pontos-jogador pontos-jogador1">0</span>
+            <div class="placar-vencedor">
+                <h1 class="titulo-placar">Placar</h1>
+                <span class="jogador-vencedor-placar">Nome Jogador</span>
+            </div>
+            <span class="pontos-jogador pontos-jogador2">0</span>
+        </div>
+        <ul class="box-campo">
+            <li class="campo campo0"></li>
+            <li class="campo campo1"></li>
+            <li class="campo campo2"></li>
+            <li class="campo campo3"></li>
+            <li class="campo campo4"></li>
+            <li class="campo campo5"></li>
+            <li class="campo campo6"></li>
+            <li class="campo campo7"></li>
+            <li class="campo campo8"></li>
+        </ul>
+    </div>
+    <div class="container-direita">
+        <h1 class="titulo-historico-jogadas">Historico de Jogadas</h1>
+        <ul class="historico-jogadas-wrapper">
+        </ul>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
