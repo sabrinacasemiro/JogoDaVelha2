@@ -281,7 +281,7 @@ const inicializacao = () =>{
                 adicionaPontos();
                 imprimePlacar();
                 imprimeNomeVencedor();
-                verificaMD() ?  setTimeout(resetMD, 1000) : setTimeout(resetaVencedor, 1000);
+                verificaMD() ? setTimeout(resetMD, 1000) : setTimeout(resetaVencedor, 1000);
             };
             botAtivo && bot();
         })
