@@ -6,7 +6,10 @@ const $inputJogador1 = document.querySelector('.nome-jogador1');
 const $inputJogador2 = document.querySelector('.nome-jogador2');
 const $checkBoxMD = document.querySelector('.checkbox-tipo-partida');
 const $botaoMD = document.querySelector('.checkbox-tipo-partida__bolinha');
-
+const $buttonReset = document.querySelector('.button-reiniciar');
+const $checkBoxBot = document.querySelector('.checkbox-bot');
+const $botaoBot = document.querySelector('.checkbox-bot__bolinha');
+ 
 const linha1 = [$campos[0], $campos[1], $campos[2]];
 const linha2 = [$campos[3], $campos[4], $campos[5]];
 const linha3 = [$campos[6], $campos[7], $campos[8]];
@@ -24,6 +27,7 @@ let placarJogador1 = 0;
 let placarJogador2 = 0;
 let velha = undefined;
 let md3 = true;
+let bot = false;
 
 
 const handleClickCampos = () => {
@@ -41,9 +45,11 @@ const handleClickCampos = () => {
             imprimeVencedor();
             imprimeVelha();
             if(velha === true || vencedor != '') {
-                setTimeout(resetAutomatico, 2500);
+                setTimeout(resetAutomatico, 2000);
             }
+            setTimeout(verificaMD, 2000)
             alternaJogada();
+            ativaBot();
 
         });
     }
@@ -104,7 +110,6 @@ const resetAutomatico = () => {
         resetaCampos();
         vencedor = '';
         velha = false;
-        console.log('chamou reset');
 }
 
 const resetaCampos = () => {
@@ -113,12 +118,88 @@ const resetaCampos = () => {
     }
 }
 
-const resetTudo = () => {
 
+
+const resetTudo = () => {
+    resetaCampos();
+    vencedor = '';
+    placarJogador1 = 0;
+    $pontoJogador1.textContent = '0';
+    placarJogador2 = 0;
+    $pontoJogador2.textContent = '0';
+    velha = false;
+    $nomeVencecdorPlacar.textContent = 'Nome Jogador';
+    $inputJogador1.value = '';
+    $inputJogador2.value = '';
+}
+
+const reiniciaMD = () => {
+    resetaCampos();
+    vencedor = '';
+    placarJogador1 = 0;
+    $pontoJogador1.textContent = '0';
+    placarJogador2 = 0;
+    $pontoJogador2.textContent = '0';
+    velha = false;
+    $nomeVencecdorPlacar.textContent = 'Nome Jogador';
+}
+
+const verificaMD = () => {
+    if(md3 === true && (placarJogador1 === 2 || placarJogador2 === 2)){
+        reiniciaMD();
+    } else if(md3 === false && (placarJogador1 === 3 || placarJogador2 === 3)){
+        reiniciaMD();
+    }
+
+}
+
+const ativaBot = () => {
+    const campoAleatorio = Math.floor(Math.random() * 9);
+    console.log($campos[campoAleatorio]);
+    if($campos[campoAleatorio].textContent != '' && velha === false) {
+        return ativaBot();
+    }
+    if(bot === true){
+        if(vencedor != ''){
+            return;           
+        } 
+        if($campos[campoAleatorio].textContent != '') {
+            return;
+        }
+        imprimeLetra(campoAleatorio);
+        verificaVencedor();
+        imprimePontuacao();
+        imprimeVencedor();
+        imprimeVelha();
+        if(velha === true || vencedor != '') {
+            setTimeout(resetAutomatico, 2000);
+        }
+        setTimeout(verificaMD, 2000)
+        alternaJogada();
+    }
 }
 
 $checkBoxMD.addEventListener('click', () => {
     $botaoMD.classList.toggle('checkbox-bot-md-bolinha-clicked');
+    if(md3 === true) {
+        md3 = false;
+    } else {
+        md3 = true;
+    }
+})
+
+$checkBoxBot.addEventListener('click', () => {
+    $botaoBot.classList.toggle('checkbok-bot-bolinha-clicked');
+    if(bot === false){
+        bot = true;
+    } else {
+        bot = false;
+    }
+    console.log(bot);
+})
+
+$buttonReset.addEventListener('click', () => {
+    resetTudo();
 })
 
 handleClickCampos();
