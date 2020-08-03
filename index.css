@@ -100,7 +100,7 @@ body {
     border: 1px solid #fff;
     display: flex;
     align-items: center;
-    padding: 0 2px;
+    padding: 0 2px; 
     cursor: pointer;
 }
 
@@ -231,9 +231,7 @@ body {
     border: none;
     font-size: 1em;
     border-radius: 9px;
-    outline: none
-    
-    ;
+    outline: none;
 }
 
 .container-centro {
@@ -328,18 +326,21 @@ body {
     width: 70%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .campo-historico-jogadas {
-    height: 11%;
-    width: 100%;
+    height: 8%;
+    min-height: 8%;
+    width: 258.7px;
+    min-width: 258.7px;
     background-color: #fff;
     border-radius: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 8px;
+    margin-left: 55px;
     animation-name: historico-jogadas-entrando;
     animation-duration: 250ms;
     animation-fill-mode: backwards;
@@ -359,12 +360,12 @@ body {
 
 .jogada-historico-jogadas {
     color: darkgray;
-    font-size: 4.5em;
+    font-size: 3em;
 }
 
 .nome-campo-jogada {
     height: 100%;
-    width: 70%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -373,8 +374,11 @@ body {
 
 .jogador-historico-jogadas {
     color: darkgrey;
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 .campo-jogada {
-    color: #DB7093
+    color: #DB7093;
+    white-space: nowrap;
 }

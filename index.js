@@ -236,6 +236,7 @@ const bot = () =>{
 const guardaHistoricoJogadas = () =>{
     const novoArrayUltimaPartida = [...historicoUltimaPartida];
     arrayHistoricoJogadas.push(novoArrayUltimaPartida);
+    console.log(novoArrayUltimaPartida);
 }
 
 const reset = () =>{
